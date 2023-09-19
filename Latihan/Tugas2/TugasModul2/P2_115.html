@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>P2_115</title>
+</head>
+<body>
+    <div class="header1">P2_115</div>
+    <form onsubmit="return validate()">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Nama:</td>
+                    <td>:</td>
+                    <td>
+                        <input id="nama" type="text" />
+                    </td>
+                    <td id="error_nama" style="color:red"></td><!--pesan kesalahan-->
+                </tr>
+
+                <tr>
+                    <td>Mata Kuliah:</td>
+                    <td>:</td>
+                    <td>
+                        <select id="matakuliah">
+                            <option value="">Pilih Mata Kuliah</option>
+                            <option value="matematika">Matematika</option>
+                            <option value="fisika">Fisika</option>
+                            <option value="kimia">Kimia</option>
+                        </select>
+                    </td>
+                    <td id="error_matakuliah" style="color:red"></td><!--pesan kesalahan-->
+                </tr>
+
+                <tr>
+                    <td>Nilai:</td>
+                    <td>:</td>
+                    <td>
+                        <input id="nilai" type="number" />
+                    </td>
+                    <td id="error_nilai" style="color:red"></td><!--pesan kesalahan-->
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="return confirm('Apakah Anda yakin ingin membatalkan?')">Batal</button>
+                    </td>
+                    <td></td>
+                    <td> <input type="submit" value="Kirim"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <script>
+        function validate() {
+            //tambahkan kode validasi disini
+            let nama = document.getElementById("nama").value;
+            let matakuliah = document.getElementById("matakuliah").value;
+            let nilai = document.getElementById("nilai").value;
+            let isValid = true;
+
+            //validasi nama
+            if (nama.trim() === "") {
+                document.getElementById("error_nama").innerText = "Harap isi field Nama";//tampilkan pesan kesalahan
+                isValid = false;
+            } else {
+                let namapatnern = /^[a-zA-Z\s]*$/; // Pola regex harus huruf dan spasi
+                if (!namapatnern.test(nama.trim())) {
+                    document.getElementById("error_nama").innerText = "Nama harus diisi Huruf atau Spasi";
+                    isValid = false;
+                } else {
+                    document.getElementById("error_nama").innerText = "";
+                }
+            }
+
+            //validasi matakuliah
+            if (matakuliah === "") {
+                document.getElementById("error_matakuliah").innerText = "Harap pilih matakuliah";//tampilkan pesan kesalahan
+                isValid = false;
+            } else {
+                document.getElementById("error_matakuliah").innerText = "";//hapus pesan kesalahan jika valid
+            }
+
+            //validasi nilai
+            if (nilai === "") {
+                document.getElementById("error_nilai").innerText = "Harap isi field Nilai";//tampilkan pesan kesalahan
+                isValid = false;
+            } else {
+                document.getElementById("error_nilai").innerText = "";//hapus pesan kesalahan jika valid
+            }
+            return isValid;
+        }
+    </script>
+</body>
+</html>

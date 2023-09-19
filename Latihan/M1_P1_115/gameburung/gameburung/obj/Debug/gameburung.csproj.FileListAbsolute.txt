@@ -1,0 +1,11 @@
+C:\Users\peter\OneDrive\Desktop\PETER\BELAJAR\PROJEK\Game Burung\gameburung\gameburung\bin\Debug\gameburung.exe.config
+C:\Users\peter\OneDrive\Desktop\PETER\BELAJAR\PROJEK\Game Burung\gameburung\gameburung\bin\Debug\gameburung.exe
+C:\Users\peter\OneDrive\Desktop\PETER\BELAJAR\PROJEK\Game Burung\gameburung\gameburung\bin\Debug\gameburung.pdb
+C:\Users\peter\OneDrive\Desktop\PETER\BELAJAR\PROJEK\Game Burung\gameburung\gameburung\obj\Debug\gameburung.csproj.AssemblyReference.cache
+C:\Users\peter\OneDrive\Desktop\PETER\BELAJAR\PROJEK\Game Burung\gameburung\gameburung\obj\Debug\gameburung.csproj.SuggestedBindingRedirects.cache
+C:\Users\peter\OneDrive\Desktop\PETER\BELAJAR\PROJEK\Game Burung\gameburung\gameburung\obj\Debug\gameburung.Form1.resources
+C:\Users\peter\OneDrive\Desktop\PETER\BELAJAR\PROJEK\Game Burung\gameburung\gameburung\obj\Debug\gameburung.Properties.Resources.resources
+C:\Users\peter\OneDrive\Desktop\PETER\BELAJAR\PROJEK\Game Burung\gameburung\gameburung\obj\Debug\gameburung.csproj.GenerateResource.cache
+C:\Users\peter\OneDrive\Desktop\PETER\BELAJAR\PROJEK\Game Burung\gameburung\gameburung\obj\Debug\gameburung.csproj.CoreCompileInputs.cache
+C:\Users\peter\OneDrive\Desktop\PETER\BELAJAR\PROJEK\Game Burung\gameburung\gameburung\obj\Debug\gameburung.exe
+C:\Users\peter\OneDrive\Desktop\PETER\BELAJAR\PROJEK\Game Burung\gameburung\gameburung\obj\Debug\gameburung.pdb
