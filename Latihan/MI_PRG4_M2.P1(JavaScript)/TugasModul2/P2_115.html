@@ -52,6 +52,17 @@
     </form>
 
     <script>
+            function resetForm() {
+                // Menghapus pesan kesalahan
+                document.getElementById("error_nama").innerText = "";
+            document.getElementById("error_matakuliah").innerText = "";
+            document.getElementById("error_nilai").innerText = "";
+
+            // Mereset nilai input
+            document.getElementById("nama").value = "";
+            document.getElementById("matakuliah").value = "";
+            document.getElementById("nilai").value = "";
+    }
         function validate() {
             //tambahkan kode validasi disini
             let nama = document.getElementById("nama").value;
@@ -61,15 +72,18 @@
 
             //validasi nama
             if (nama.trim() === "") {
-                document.getElementById("error_nama").innerText = "Harap isi field Nama";//tampilkan pesan kesalahan
-                isValid = false;
+                document.getElementById("error_nama").innerText = "Harap isi field Nama!"; // Tampilkan pesan kesalahan
+                validate = false;
             } else {
-                let namapatnern = /^[a-zA-Z\s]*$/; // Pola regex harus huruf dan spasi
-                if (!namapatnern.test(nama.trim())) {
-                    document.getElementById("error_nama").innerText = "Nama harus diisi Huruf atau Spasi";
-                    isValid = false;
+                let Pattern = /^[a-zA-Z\s]*$/;
+                if (!Pattern.test(nama.trim())) {
+                    document.getElementById("error_nama").innerText = "Harap harus berisi huruf atau spasi!"; // Tampilkan pesan kesalahan
+                    validate = false;
+                } else if (nama.length > 20) {
+                    document.getElementById("error_nama").innerText = "Nama maksimal 20 karakter!";
+                    return false;
                 } else {
-                    document.getElementById("error_nama").innerText = "";
+                    document.getElementById("error_nama").innerText = ""; // Hapus pesan kesalahan jika valid
                 }
             }
 
@@ -83,13 +97,26 @@
 
             //validasi nilai
             if (nilai === "") {
-                document.getElementById("error_nilai").innerText = "Harap isi field Nilai";//tampilkan pesan kesalahan
-                isValid = false;
+                document.getElementById("error_nilai").innerText = "Harap isi field nilai!"; // Tampilkan pesan kesalahan
+                validate = false;
+            } else if (isNaN(nilai) || nilai < 0 || nilai > 100) {
+                document.getElementById("error_nilai").innerText = "Nilai harus antara 0 dan 100!";
+                return false; // Kembalikan false untuk mencegah pengiriman formulir
             } else {
-                document.getElementById("error_nilai").innerText = "";//hapus pesan kesalahan jika valid
+                document.getElementById("error_nilai").innerText = ""; // Hapus pesan kesalahan jika valid
             }
-            return isValid;
+
+            return validate;
         }
+    </script>
+    <script>
+        // Menambahkan event listener pada tombol "Kirim"
+        document.getElementById("kirimButton").addEventListener("click", function (e) {
+            if (!confirm('Apakah anda yakin ingin mengirim form?')) {
+                e.preventDefault();
+                resetForm();
+            }
+        });
     </script>
 </body>
 </html>
